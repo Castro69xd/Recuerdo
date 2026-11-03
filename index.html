@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="El mapa interactivo del año para repasar los módulos de 3.º Bachillerato Técnico Vocacional en Desarrollo de Software «A» del INDEL.">
+  <meta name="theme-color" content="#101a2d">
+  <title>HUB 3DS·A — El mapa del año</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="barra">
+    <a class="marca" href="#inicio" aria-label="HUB 3DS·A, inicio">
+      <span class="marca-sello" aria-hidden="true">3DS·A</span>
+      <span>HUB <span class="marca-acento">del año</span></span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#recorrido">Módulos</a>
+      <a href="#equipo">Equipo docente</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="portada" id="inicio" aria-labelledby="titulo-principal">
+      <p class="etiqueta">3.º Bachillerato Técnico Vocacional · Desarrollo de Software «A» · INDEL</p>
+      <div class="portada-cuerpo">
+        <div>
+          <p class="sobrelinea">UN AÑO · SIETE ESTACIONES</p>
+          <h1 id="titulo-principal">HUB <span>3DS·A</span></h1>
+          <p class="introduccion">Este es <strong>el mapa del año</strong>. Elige un módulo para ver qué se trabajó y qué falta completar. Un punto de partida claro para repasar, compartir y seguir aprendiendo.</p>
+          <a class="boton-principal" href="#recorrido">Explorar los módulos <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="resumen" aria-label="Resumen del portal" aria-live="polite">
+          <p class="resumen-titulo">El recorrido</p>
+          <p><strong id="total-modulos">0</strong><span>módulos</span></p>
+          <p><strong id="total-docentes">0</strong><span>docentes</span></p>
+          <p><strong id="total-evidencias">0</strong><span>evidencias</span></p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="seccion recorrido" id="recorrido" aria-labelledby="titulo-recorrido">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="sobrelinea">TU RUTA DE REPASO</p>
+          <h2 id="titulo-recorrido">El mapa del año</h2>
+        </div>
+        <p class="nota">Cada estación es un módulo. Actívala para abrir su ficha; las fichas pendientes se completarán con evidencia real.</p>
+      </div>
+
+      <div class="controles-vista" role="group" aria-label="Elegir vista de módulos">
+        <button class="control-vista seleccionado" id="ver-mapa" type="button" aria-pressed="true" aria-controls="mapa-modulos">Mapa</button>
+        <button class="control-vista" id="ver-lista" type="button" aria-pressed="false" aria-controls="lista-modulos">Lista accesible</button>
+      </div>
+
+      <div class="mapa-marco" id="mapa-marco">
+        <div class="mapa-estaciones" id="mapa-modulos" aria-label="Mapa interactivo de módulos"></div>
+      </div>
+      <ul class="lista-modulos" id="lista-modulos" aria-label="Lista de módulos" hidden></ul>
+
+      <section class="panel" id="panel-modulo" aria-label="Ficha del módulo seleccionado" aria-live="polite" aria-atomic="true">
+        <div class="panel-vacio">
+          <span class="panel-icono" aria-hidden="true">↗</span>
+          <p>Selecciona una estación para abrir su ficha.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="seccion como-usar" aria-labelledby="titulo-como-usar">
+      <p class="sobrelinea">PRIMERA VEZ AQUÍ</p>
+      <h2 id="titulo-como-usar">¿Cómo se usa?</h2>
+      <ol>
+        <li><span>01</span>Elige una estación del mapa o un módulo de la lista.</li>
+        <li><span>02</span>Revisa sus evidencias y los datos de la ficha.</li>
+        <li><span>03</span>Lo que diga «POR COMPLETAR» se añadirá con evidencia real.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer id="equipo">
+    <div class="pie">
+      <div>
+        <p class="sobrelinea">HUB 3DS·A · VERSIÓN 0.2</p>
+        <h2>Cimientos del HUB</h2>
+        <p>Hecho para repasar en equipo con HTML, CSS y JavaScript puro.</p>
+      </div>
+      <div>
+        <h3>Equipo docente</h3>
+        <ul class="lista-docentes" id="lista-docentes"></ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/modulos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
